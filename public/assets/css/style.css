@@ -1,0 +1,25 @@
+body {
+    background-color:rgb(211, 211, 12);
+  }
+  
+  .jumbotron {
+    background-color: rgb(211, 211, 12);
+  }
+  
+  .card {
+    background-color: wheat;
+  }
+  
+  /* Buttons */
+  .submitBtn,
+  .devourBtn {
+    background-color: orangered;
+    border-color:orangered;
+    color: black;
+  }
+  
+  .submitBtn:hover,
+  .devourBtn:hover {
+    background-color:rgb(241, 127, 86);
+    border-color: rgb(241, 127, 86);
+  }

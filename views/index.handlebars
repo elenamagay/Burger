@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <img src="/assets/images/burger.jpg" alt="burger" width="200">
+        <h1>Eat-Da-Burger!</h1>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-6 text-left mb-3">
+            <div class="card">
+                <ul class="card-body">                   
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                        {{/unless}}
+                        {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-6 text-right mb-3">
+            <div class="card">
+                <ul class="card-body">
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        {{> burgers/burger-block devoured=false}}
+                        {{/if}}
+                        {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <form>
+                <div class="mb-2">
+                    <input id="burgerName" type="text" size="40" maxlength="30">
+                </div>
+                <div>
+                    <button type="submit" class="btn submitBtn btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            Enter a burger you want to eat. Then click the "Submit" button
+        </div>
+    </div>
+</div>
