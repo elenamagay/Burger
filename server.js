@@ -16,5 +16,5 @@ app.set("view engine", "handlebars");
 app.use(burger_controller);
 
 app.listen(PORT, function(){
-    console.log("Server listening on: localhost: " + PORT);
+    console.log("Server listening on localhost: " + PORT);
 });
