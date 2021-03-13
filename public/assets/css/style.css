@@ -13,13 +13,13 @@ body {
   /* Buttons */
   .submitBtn,
   .devourBtn {
-    background-color: orangered;
-    border-color:orangered;
+    background-color: #3587A4;
+    border-color:#3587A4;
     color: black;
   }
   
   .submitBtn:hover,
   .devourBtn:hover {
-    background-color:rgb(241, 127, 86);
-    border-color: rgb(241, 127, 86);
+    background-color:#315461;
+    border-color: #315461;
   }
