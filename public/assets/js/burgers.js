@@ -1,33 +1,37 @@
-$(function() {
-
-$(".devourBtn").on("click", event => {
+$(document).ready(function() {
+$(".devourBtn").on("click", function (event) {
     event.preventDefault();
-
-    const id = $(this).data("id");
-    let nDevoured = $(this).data("nDevoured");
-    console.log(nDevoured);
-    let devoured = {
-      devoured: true
-    };
-
-    $.ajax(("/api/burgers/" + id, {
-      type: "PUT",
-      data: devoured
-    }).then(() => location.reload()));
+    
+    const id = $(this).attr("data-id");
+    console.log(id);
+    $.ajax( {
+      method: "PUT",
+      url: "/api/burgers/" + id,
+      data: { devoured: 1 }
+    }).then(result => {
+      console.log(result);
+      location.reload()
+    });
 });
 
 
-$(".submitBtn").on("click", event => {
+$(".submitBtn").on("click", function (event) {
     event.preventDefault();
-  
+   
     const name = $("#burgerName").val().trim();
-  
-    $.ajax("/api/burgers", {
+    const myBurger = {
+      burger_name: name,
+      devoured: 0
+    }
+    console.log(name);
+    $.ajax( {
 
-      type: "POST",
-      data: name
-      })
-      .then(() => location.reload());
+      method: "POST",
+      url: "/api/burgers",
+      data: myBurger
+      }).then(result => {
+        console.log(result);
+        location.reload()
+      });
   });
-
 });
